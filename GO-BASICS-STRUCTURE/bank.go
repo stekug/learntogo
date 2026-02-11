@@ -20,9 +20,10 @@ func main() {
 
 		// wantsCheckBalance := choice == 1
 
-		if choice == 1 {
+		switch choice {
+		case 1:
 			fmt.Println("Your balance is: ", accountBalance)
-		} else if choice == 2 {
+		case 2:
 			fmt.Print("Your deposit: ")
 			var depositAmount float64
 			fmt.Scan(&depositAmount)
@@ -34,7 +35,7 @@ func main() {
 
 			accountBalance += depositAmount // accountBalance = accountBalance + depositBalance
 			fmt.Println("Balance updated. New Amount: ", accountBalance)
-		} else if choice == 3 {
+		case 3:
 			fmt.Print("Withdrawal amount: ")
 			var withdrawalAmount float64
 			fmt.Scan(&withdrawalAmount)
@@ -51,12 +52,50 @@ func main() {
 
 			accountBalance -= withdrawalAmount
 			fmt.Println("Balance updated. New Amount: ", accountBalance)
-		} else {
+		default:
 			fmt.Println("Goodbye!")
-			// return
-			break
+			fmt.Println("Thanks for choosing our bank")
+
+			return
+			// break
 		}
+
+		// if choice == 1 {
+		// 	fmt.Println("Your balance is: ", accountBalance)
+		// } else if choice == 2 {
+		// 	fmt.Print("Your deposit: ")
+		// 	var depositAmount float64
+		// 	fmt.Scan(&depositAmount)
+
+		// 	if depositAmount <= 0 {
+		// 		fmt.Println("Invalid amount. Must be greater than 0.")
+		// 		continue
+		// 	}
+
+		// 	accountBalance += depositAmount // accountBalance = accountBalance + depositBalance
+		// 	fmt.Println("Balance updated. New Amount: ", accountBalance)
+		// } else if choice == 3 {
+		// 	fmt.Print("Withdrawal amount: ")
+		// 	var withdrawalAmount float64
+		// 	fmt.Scan(&withdrawalAmount)
+
+		// 	if withdrawalAmount <= 0 {
+		// 		fmt.Println("Invalid amount. Must be greater than 0.")
+		// 		continue
+		// 	}
+
+		// 	if withdrawalAmount > accountBalance {
+		// 		fmt.Println("Invalid amount. You cant withdraw more than you have.")
+		// 		continue
+		// 	}
+
+		// 	accountBalance -= withdrawalAmount
+		// 	fmt.Println("Balance updated. New Amount: ", accountBalance)
+		// } else {
+		// 	fmt.Println("Goodbye!")
+		// 	// return
+		// 	break
+		// }
 	}
 
-	fmt.Println("Thanks for choosing our bank")
 }
